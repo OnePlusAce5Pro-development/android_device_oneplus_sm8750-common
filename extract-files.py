@@ -94,6 +94,7 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/hw/android.hardware.bluetooth.audio_sw.so': blob_fixup()
         .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V3-ndk.so'),
     'vendor/lib64/hw/libaudiocorehal.qti.so': blob_fixup()
+        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so')
         .replace_needed('libaudio_aidl_conversion_common_ndk.so', 'libaudio_aidl_conversion_common_ndk_prebuilt.so'),
     'vendor/lib64/android.hardware.bluetooth.audio-impl_prebuilt.so': blob_fixup()
         .replace_needed('libbluetooth_audio_session_aidl.so', 'libbluetooth_audio_session_aidl_prebuilt.so'),
@@ -112,7 +113,8 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libaudioutils_shim.so')
         .replace_needed('android.hardware.bluetooth.audio-impl.so', 'android.hardware.bluetooth.audio-impl_prebuilt.so')
         .replace_needed('libaudio_aidl_conversion_common_ndk.so', 'libaudio_aidl_conversion_common_ndk_prebuilt.so')
-        .replace_needed('libbluetooth_audio_session_aidl.so', 'libbluetooth_audio_session_aidl_prebuilt.so'),
+        .replace_needed('libbluetooth_audio_session_aidl.so', 'libbluetooth_audio_session_aidl_prebuilt.so')
+        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
     (
         'vendor/lib64/libcwb_qcom_aidl.so',
         'vendor/lib64/libhwcsensor.so',
@@ -126,6 +128,8 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libbase.so'),
     'vendor/lib64/libwfdmmsrc_proprietary.so': blob_fixup()
         .replace_needed('android.media.audio.common.types-V2-ndk.so', 'android.media.audio.common.types-V3-ndk.so'),
+    'vendor/lib64/libaudio_aidl_conversion_common_ndk_prebuilt.so': blob_fixup()
+        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
