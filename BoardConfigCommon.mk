@@ -103,6 +103,10 @@ TARGET_KERNEL_CONFIG := \
     vendor/sun_perf.config \
     vendor/oplus/sun_perf.config
 
+BUILD_BROKEN_SRC_DIR_IS_WRITABLE := true
+
+TARGET_KERNEL_CLANG_VERSION := r563880c
+
 # Kernel modules
 BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(strip $(shell sed 's/#.*$$//;/^$$/d' $(COMMON_PATH)/modules.load.system_dlkm))
 BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(TARGET_KERNEL_SOURCE)/modules.vendor_blocklist.msm.sun
